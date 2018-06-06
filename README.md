@@ -6,6 +6,6 @@ ISBN-10: 0-324-78201-2
 
 Programming done using Code::Blocks IDE
 
-Lets go ...
+Lets get going ...
 
 
