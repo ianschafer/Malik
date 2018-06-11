@@ -8,4 +8,4 @@ Programming done using Code::Blocks IDE
 
 Lets get going ...
 
-
+class clockType ADT built
