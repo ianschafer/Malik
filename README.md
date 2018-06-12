@@ -13,4 +13,5 @@ ADT built class personType
 ADT built class fruitJuiceMachine
 ADT built base class stackType
 ADT built derived class linkedStackType
+ADT built from derived class unorderedLinkedListStackType
 
