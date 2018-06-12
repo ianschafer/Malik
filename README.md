@@ -10,4 +10,6 @@ Lets get going ...
 
 ADT built class clockType
 ADT built class personType 
-ADT built class fruitJuiceMachine 
+ADT built class fruitJuiceMachine
+ADT built class stackType
+
