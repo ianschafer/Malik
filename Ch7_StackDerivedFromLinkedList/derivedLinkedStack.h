@@ -1,12 +1,12 @@
 //Header file derivedLinkedStack.h
- 
+
 #ifndef H_derivedLinkedStack
 #define H_derivedLinkedStack
 
 #include <iostream>
 #include "unorderedLinkedList.h"
 
-using namespace std; 
+using namespace std;
 
 template<class Type>
 class linkedStackType: public unorderedLinkedList<Type>
@@ -47,17 +47,22 @@ void linkedStackType<Type>::push(const Type& newElement)
 template<class Type>
 Type linkedStackType<Type>::top() const
 {
-    return unorderedLinkedList<Type>::front();	
+    return unorderedLinkedList<Type>::front();
 }
- 
+
 template<class Type>
 void linkedStackType<Type>::pop()
 {
     nodeType<Type> *temp;
 
-    temp = first;
-    first = first->link;
-    delete temp;
-}
+    if (linkedListType<Type>::first != NULL)
+    {
+        temp = linkedListType<Type>::first;
+        linkedListType<Type>::first = linkedListType<Type>::first->link;
+        delete temp;
+    }
+    else
+        cout << "Cannot remove from an empty stack." << endl;
+}//end pop
 
 #endif
