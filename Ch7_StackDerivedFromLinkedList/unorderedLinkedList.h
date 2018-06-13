@@ -1,7 +1,7 @@
-#ifndef H_UnorderedLinkedList
-#define H_UnorderedLinkedList
+#ifndef H_unorderedLinkedList
+#define H_unorderedLinkedList
 
-#include "linkedList.h"
+#include "linkedListType.h"
 
 using namespace std;
 
@@ -19,7 +19,7 @@ public:
       //Postcondition: first points to the new list, newItem is
       //    inserted at the beginning of the list, last points to
       //    the last node, and count is incremented by 1.
-      //               
+      //
 
     void insertLast(const Type& newItem);
       //Function to insert newItem at the end of the list.
@@ -30,20 +30,19 @@ public:
     void deleteNode(const Type& deleteItem);
       //Function to delete deleteItem from the list.
       //Postcondition: If found, the node containing deleteItem
-      //    is deleted from the list. first points to the first 
-      //    node, last points to the last node of the updated 
+      //    is deleted from the list. first points to the first
+      //    node, last points to the last node of the updated
       //    list, and count is decremented by 1.
 };
 
 
 template <class Type>
-bool unorderedLinkedList<Type>::
-                   search(const Type& searchItem) const
+bool unorderedLinkedList<Type>::search(const Type& searchItem) const
 {
     nodeType<Type> *current; //pointer to traverse the list
     bool found = false;
-    
-    current = first; //set current to point to the first 
+
+    current = linkedListType<Type>::first; //set current to point to the first
                      //node in the list
 
     while (current != NULL && !found)    //search the list
@@ -52,7 +51,7 @@ bool unorderedLinkedList<Type>::
         else
             current = current->link; //make current point to
                                      //the next node
-    return found; 
+    return found;
 }//end search
 
 template <class Type>
@@ -63,14 +62,14 @@ void unorderedLinkedList<Type>::insertFirst(const Type& newItem)
     newNode = new nodeType<Type>; //create the new node
 
     newNode->info = newItem;    //store the new item in the node
-    newNode->link = first;      //insert newNode before first
-    first = newNode;            //make first point to the
+    newNode->link = linkedListType<Type>::first;      //insert newNode before first
+    linkedListType<Type>::first = newNode;            //make first point to the
                                 //actual first node
-    count++;                    //increment count
+    linkedListType<Type>::count++;                    //increment count
 
-    if (last == NULL)   //if the list was empty, newNode is also 
+    if (linkedListType<Type>::last == NULL)   //if the list was empty, newNode is also
                         //the last node in the list
-        last = newNode;
+        linkedListType<Type>::last = newNode;
 }//end insertFirst
 
 template <class Type>
@@ -84,19 +83,19 @@ void unorderedLinkedList<Type>::insertLast(const Type& newItem)
     newNode->link = NULL;     //set the link field of newNode
                               //to NULL
 
-    if (first == NULL)  //if the list is empty, newNode is 
+    if (linkedListType<Type>::first == NULL)  //if the list is empty, newNode is
                         //both the first and last node
     {
-        first = newNode;
-        last = newNode;
-        count++;        //increment count
+        linkedListType<Type>::first = newNode;
+        linkedListType<Type>::last = newNode;
+        linkedListType<Type>::count++;        //increment count
     }
     else    //the list is not empty, insert newNode after last
     {
-        last->link = newNode; //insert newNode after last
-        last = newNode; //make last point to the actual 
+        linkedListType<Type>::last->link = newNode; //insert newNode after last
+        linkedListType<Type>::last = newNode; //make last point to the actual
                         //last node in the list
-        count++;        //increment count
+        linkedListType<Type>::count++;        //increment count
     }
 }//end insertLast
 
@@ -108,31 +107,31 @@ void unorderedLinkedList<Type>::deleteNode(const Type& deleteItem)
     nodeType<Type> *trailCurrent; //pointer just before current
     bool found;
 
-    if (first == NULL)    //Case 1; the list is empty. 
+    if (linkedListType<Type>::first == NULL)    //Case 1; the list is empty.
         cout << "Cannot delete from an empty list."
              << endl;
     else
     {
-        if (first->info == deleteItem) //Case 2 
+        if (linkedListType<Type>::first->info == deleteItem) //Case 2
         {
-            current = first;
-            first = first->link;
-            count--;
-            if (first == NULL)    //the list has only one node
-                last = NULL;
+            current = linkedListType<Type>::first;
+            linkedListType<Type>::first = linkedListType<Type>::first->link;
+            linkedListType<Type>::count--;
+            if (linkedListType<Type>::first == NULL)    //the list has only one node
+                linkedListType<Type>::last = NULL;
             delete current;
         }
         else //search the list for the node with the given info
         {
             found = false;
-            trailCurrent = first;  //set trailCurrent to point
+            trailCurrent = linkedListType<Type>::first;  //set trailCurrent to point
                                    //to the first node
-            current = first->link; //set current to point to 
+            current = linkedListType<Type>::first->link; //set current to point to
                                    //the second node
 
             while (current != NULL && !found)
             {
-                if (current->info != deleteItem) 
+                if (current->info != deleteItem)
                 {
                     trailCurrent = current;
                     current = current-> link;
@@ -144,11 +143,11 @@ void unorderedLinkedList<Type>::deleteNode(const Type& deleteItem)
             if (found) //Case 3; if found, delete the node
             {
                 trailCurrent->link = current->link;
-                count--;
+                linkedListType<Type>::count--;
 
-                if (last == current)   //node to be deleted 
+                if (linkedListType<Type>::last == current)   //node to be deleted
                                        //was the last node
-                    last = trailCurrent; //update the value 
+                    linkedListType<Type>::last = trailCurrent; //update the value
                                          //of last
                 delete current;  //delete the node from the list
             }
