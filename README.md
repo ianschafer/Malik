@@ -11,7 +11,7 @@ Lets get going ...
 ADT built class clockType
 ADT built class personType 
 ADT built class fruitJuiceMachine
-ADT base class stackType
-Derived class linkedStackType
+ADT built base class stackType
+ADT built derived class linkedStackType
 Derived class unorderedLinkedListStackType
-
+ADT base class stackType
