@@ -2,12 +2,12 @@
 <CodeBlocks_project_file>
 	<FileVersion major="1" minor="6" />
 	<Project>
-		<Option title="Ch7_StackDerivedFromLinkedList" />
+		<Option title="CH5_ListContainer" />
 		<Option pch_mode="2" />
 		<Option compiler="gcc" />
 		<Build>
 			<Target title="Debug">
-				<Option output="bin\Debug\Ch7_StackDerivedFromLinkedList" prefix_auto="1" extension_auto="1" />
+				<Option output="bin\Debug\CH5_ListContainer" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj\Debug\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -16,7 +16,7 @@
 				</Compiler>
 			</Target>
 			<Target title="Release">
-				<Option output="bin\Release\Ch7_StackDerivedFromLinkedList" prefix_auto="1" extension_auto="1" />
+				<Option output="bin\Release\CH5_ListContainer" prefix_auto="1" extension_auto="1" />
 				<Option object_output="obj\Release\" />
 				<Option type="1" />
 				<Option compiler="gcc" />
@@ -32,10 +32,7 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="derivedLinkedStack.h" />
-		<Unit filename="linkedListType.h" />
-		<Unit filename="testProglinkedStack.cpp" />
-		<Unit filename="unorderedLinkedList.h" />
+		<Unit filename="listContainerExample 5-1.cpp" />
 		<Extensions>
 			<code_completion />
 			<debugger />

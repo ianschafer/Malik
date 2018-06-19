@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1518915858 source:c:\users\ian\desktop\malik exercises\ch5_listcontainer\listcontainerexample 5-1.cpp
+	<iostream>
+	<list>
+	<iterator>
+	<algorithm>
+
