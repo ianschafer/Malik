@@ -14,4 +14,6 @@ ADT built class fruitJuiceMachine
 ADT built base class stackType
 ADT built derived class linkedStackType
 Derived class unorderedLinkedListStackType
-ADT base class stackType
+Example of linkedListContainer from C++ library <list>
+Built linkedListType
+Built orderedLinkedList
