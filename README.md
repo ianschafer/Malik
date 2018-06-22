@@ -12,8 +12,10 @@ ADT built class clockType
 ADT built class personType 
 ADT built class fruitJuiceMachine
 ADT built base class stackType
-ADT built derived class linkedStackType
-Derived class unorderedLinkedListStackType
+Build using derived class linkedStackType
+Build using derived class unorderedLinkedListStackType
+ADT built base class linkedListType
 Example of linkedListContainer from C++ library <list>
-Built linkedListType
-Built orderedLinkedList
+Build using abstract class linkedListType
+Build using derived class orderedLinkedListType
+Build using derived class UnorderedLikedListType
