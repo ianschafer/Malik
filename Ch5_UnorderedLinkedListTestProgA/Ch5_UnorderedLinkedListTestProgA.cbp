@@ -32,7 +32,9 @@
 			<Add option="-Wall" />
 			<Add option="-fexceptions" />
 		</Compiler>
-		<Unit filename="main.cpp" />
+		<Unit filename="linkedList.h" />
+		<Unit filename="testProgLinkedList.cpp" />
+		<Unit filename="unorderedLinkedList.h" />
 		<Extensions>
 			<code_completion />
 			<debugger />
