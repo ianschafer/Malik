@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
+<CodeBlocks_layout_file>
+	<ActiveTarget name="Release" />
+	<File name="ConsoleOutro.cpp" open="1" top="0" tabpos="5">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="ConsoleOutro.h" open="1" top="0" tabpos="4">
+		<Cursor position="0" topLine="0" />
+	</File>
+	<File name="linkedList.h" open="1" top="0" tabpos="3">
+		<Cursor position="22" topLine="0" />
+	</File>
+	<File name="main.cpp" open="1" top="0" tabpos="1">
+		<Cursor position="788" topLine="22" />
+	</File>
+	<File name="orderedLinkedList_v2.h" open="1" top="1" tabpos="2">
+		<Cursor position="4951" topLine="138" />
+	</File>
+</CodeBlocks_layout_file>
