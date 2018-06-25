@@ -26,30 +26,43 @@ int main()
     orderedLinkedList<int> list1;
     orderedLinkedList<int> list2;
 
-    cout << "Populating list1 .. ";
+    cout << "main populating list1 .. ";
     list1.insert(2);
     list1.insert(6);
     list1.insert(7);
+    list1.insert(97);
+    list1.insert(98);
     cout << endl;
 
-    cout << "Printing list1 .. ";
+    cout << "main printing list1 .. ";
     list1.print();
     cout << endl << endl;
 
-    cout << "Populating list2 .. ";
+    cout << "main populating list2 .. ";
     list2.insert(3);
     list2.insert(5);
     list2.insert(8);
+    list2.insert(99);
+    list2.insert(100);
     cout << endl;
 
-    cout << "Printing list2 .. ";
+    cout << "main printing list2 .. ";
     list2.print();
     cout << endl << endl;
 
-    cout << "Merging list1 and list2 .. ";
-    newList.mergeLists(list1, list2);
+    cout << "-------> Calling mergeLists function ------->" << endl;
+
+    newList.mergeLists(newList, list1, list2);
+
+    cout << "main printing list1 .. ";
+    list1.print();
     cout << endl;
-    cout << "Printing newList .. ";
+
+    cout << "main printing list2 .. ";
+    list2.print();
+    cout << endl;
+
+    cout << "main printing newList .. ";
     newList.print();
     cout << endl << endl;
 

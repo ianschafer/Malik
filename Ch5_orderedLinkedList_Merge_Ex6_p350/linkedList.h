@@ -1,5 +1,5 @@
-#ifndef H_LinkedListType
-#define H_LinkedListType
+#ifndef linkedListType_H
+#define linkedListType_H
 
 #include <iostream>
 #include <cassert>
@@ -7,7 +7,6 @@
 using namespace std;
 
 //Definition of the node
-
 template <class Type>
 struct nodeType
 {
@@ -38,13 +37,13 @@ public:
       //Function to overload the dereferencing operator *.
       //Postcondition: Returns the info contained in the node.
 
-    linkedListIterator<Type> operator++();    
+    linkedListIterator<Type> operator++();
       //Overload the preincrement operator.
       //Postcondition: The iterator is advanced to the next node.
 
     bool operator==(const linkedListIterator<Type>& right) const;
       //Overload the equality operator.
-      //Postcondition: Returns true if this iterator is equal to 
+      //Postcondition: Returns true if this iterator is equal to
       //    the iterator specified by right, otherwise it returns
       //    false.
 
@@ -80,7 +79,7 @@ Type linkedListIterator<Type>::operator*()
 }
 
 template <class Type>
-linkedListIterator<Type> linkedListIterator<Type>::operator++()   
+linkedListIterator<Type> linkedListIterator<Type>::operator++()
 {
     current = current->link;
 
@@ -117,12 +116,12 @@ public:
                          (const linkedListType<Type>&);
       //Overload the assignment operator.
 
-    void initializeList(); 
+    void initializeList();
       //Initialize the list to an empty state.
       //Postcondition: first = NULL, last = NULL, count = 0;
 
     bool isEmptyList() const;
-      //Function to determine whether the list is empty. 
+      //Function to determine whether the list is empty.
       //Postcondition: Returns true if the list is empty, otherwise
       //    it returns false.
 
@@ -138,17 +137,17 @@ public:
       //Function to delete all the nodes from the list.
       //Postcondition: first = NULL, last = NULL, count = 0;
 
-    Type front() const; 
+    Type front() const;
       //Function to return the first element of the list.
       //Precondition: The list must exist and must not be empty.
       //Postcondition: If the list is empty, the program terminates;
       //    otherwise, the first element of the list is returned.
 
-    Type back() const; 
+    Type back() const;
       //Function to return the last element of the list.
       //Precondition: The list must exist and must not be empty.
       //Postcondition: If the list is empty, the program
-      //               terminates; otherwise, the last  
+      //               terminates; otherwise, the last
       //               element of the list is returned.
 
     virtual bool search(const Type& searchItem) const = 0;
@@ -177,42 +176,42 @@ public:
       //    count is decremented by 1.
 
     linkedListIterator<Type> begin();
-      //Function to return an iterator at the beginning of the 
+      //Function to return an iterator at the beginning of the
       //linked list.
       //Postcondition: Returns an iterator such that current is set
       //    to first.
 
     linkedListIterator<Type> end();
-      //Function to return an iterator one element past the 
-      //last element of the linked list. 
+      //Function to return an iterator one element past the
+      //last element of the linked list.
       //Postcondition: Returns an iterator such that current is set
       //    to NULL.
 
-    linkedListType(); 
+    linkedListType();
       //default constructor
       //Initializes the list to an empty state.
-      //Postcondition: first = NULL, last = NULL, count = 0; 
+      //Postcondition: first = NULL, last = NULL, count = 0;
 
-    linkedListType(const linkedListType<Type>& otherList); 
+    linkedListType(const linkedListType<Type>& otherList);
       //copy constructor
 
-    ~linkedListType();   
+    ~linkedListType();
       //destructor
       //Deletes all the nodes from the list.
-      //Postcondition: The list object is destroyed. 
+      //Postcondition: The list object is destroyed.
 
 protected:
     int count; //variable to store the number of list elements
-                 // 
+                 //
     nodeType<Type> *first; //pointer to the first node of the list
     nodeType<Type> *last;  //pointer to the last node of the list
 
-private: 
-    void copyList(const linkedListType<Type>& otherList); 
+private:
+    void copyList(const linkedListType<Type>& otherList);
       //Function to make a copy of otherList.
       //Postcondition: A copy of otherList is created and assigned
       //    to this list.
-}; 
+};
 
 template <class Type>
 bool linkedListType<Type>::isEmptyList() const
@@ -256,7 +255,7 @@ void linkedListType<Type>::print() const
 {
     nodeType<Type> *current; //pointer to traverse the list
 
-    current = first;    //set current so that it points to 
+    current = first;    //set current so that it points to
                         //the first node
     while (current != NULL) //while more data to print
     {
@@ -273,18 +272,18 @@ int linkedListType<Type>::length() const
 
 template <class Type>
 Type linkedListType<Type>::front() const
-{   
+{
     assert(first != NULL);
 
-    return first->info; //return the info of the first node	
+    return first->info; //return the info of the first node
 }//end front
 
 template <class Type>
 Type linkedListType<Type>::back() const
-{   
+{
     assert(last != NULL);
 
-    return last->info; //return the info of the last node	
+    return last->info; //return the info of the last node
 }//end back
 
 template <class Type>
@@ -305,7 +304,7 @@ linkedListIterator<Type> linkedListType<Type>::end()
 
 template <class Type>
 void linkedListType<Type>::copyList
-                   (const linkedListType<Type>& otherList) 
+                   (const linkedListType<Type>& otherList)
 {
     nodeType<Type> *newNode; //pointer to create a node
     nodeType<Type> *current; //pointer to traverse the list
@@ -321,7 +320,7 @@ void linkedListType<Type>::copyList
     }
     else
     {
-        current = otherList.first; //current points to the 
+        current = otherList.first; //current points to the
                                    //list to be copied
         count = otherList.count;
 
@@ -329,7 +328,7 @@ void linkedListType<Type>::copyList
         first = new nodeType<Type>;  //create the node
 
         first->info = current->info; //copy the info
-        first->link = NULL;        //set the link field of 
+        first->link = NULL;        //set the link field of
                                    //the node to NULL
         last = first;              //make last point to the
                                    //first node
@@ -341,12 +340,12 @@ void linkedListType<Type>::copyList
         {
             newNode = new nodeType<Type>;  //create a node
             newNode->info = current->info; //copy the info
-            newNode->link = NULL;       //set the link of 
+            newNode->link = NULL;       //set the link of
                                         //newNode to NULL
             last->link = newNode;  //attach newNode after last
             last = newNode;        //make last point to
                                    //the actual last node
-            current = current->link;   //make current point 
+            current = current->link;   //make current point
                                        //to the next node
         }//end while
     }//end else
@@ -370,13 +369,13 @@ linkedListType<Type>::linkedListType
 template <class Type>
 const linkedListType<Type>& linkedListType<Type>::operator=
                       (const linkedListType<Type>& otherList)
-{ 
+{
     if (this != &otherList) //avoid self-copy
     {
         copyList(otherList);
     }//end else
 
-     return *this; 
+     return *this;
 }
 
 #endif
